@@ -23,6 +23,7 @@ function displayEmployees(employeeData) {
         let city = employee.location.city;
         let picture = employee.picture;
 
+        // Build the employee card HTML
         employeeHTML += `
         <div class="card" data-index="${index}">
                 <img class="avatar" src="${picture.large}" alt="Photo of ${name.first} ${name.last}">
@@ -34,12 +35,13 @@ function displayEmployees(employeeData) {
             </div>
         `;
     });
-
+    // Insert employee grid content into div
     gridContainer.innerHTML = employeeHTML;
 }
 
 // Put employee info in the popup modal
 function displayModal(index) {
+    console.log('display modal');
     let {name,
         dob,
         phone,
@@ -48,6 +50,7 @@ function displayModal(index) {
         picture} = employees[index];
     let date = new Date(dob.date);
 
+    // Build the modal's HTML
     const modalHTML = `
         <img class="avatar" src="${picture.large}" alt="Photo of ${name.first} ${name.last}">
         <div class="modal-text">
@@ -63,15 +66,13 @@ function displayModal(index) {
 
     // Make the overlay visible
     overlay.classList.remove("hidden");
-
+    // Insert modal HTML content into div
     modalContainer.innerHTML = modalHTML;
 }
 
 gridContainer.addEventListener('click', e => {
     // Select card and display appropriate modal, as long as not selecting the gridContainer.
     if(e.target !== gridContainer) {
-        console.log('click');
-
         const card = e.target.closest(".card");
         const index = card.getAttribute('data-index');
         displayModal(index);
