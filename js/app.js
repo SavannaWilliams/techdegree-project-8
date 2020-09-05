@@ -41,7 +41,6 @@ function displayEmployees(employeeData) {
 
 // Put employee info in the popup modal
 function displayModal(index) {
-    console.log('display modal');
     let {name,
         dob,
         phone,
@@ -94,15 +93,12 @@ function filterSearch() {
     let lastName = employees[i].name.last.toUpperCase();
     let dataIndex = `[data-index="${i}"]`;
     let currentCard = document.querySelector(dataIndex);
-    let currentName = currentCard.querySelector('h2').textContent;
-    console.log(currentName);
+    let currentName = currentCard.querySelector('h2').textContent.toUpperCase();
 
-    if (currentName.indexOf(filter) > -1){
-        console.log('match');
+    if (currentName.includes(filter)){
         currentCard.style.display = "";
 
     } else {
-        console.log('wrong');
         currentCard.style.display = "none";
     }
 
