@@ -64,6 +64,11 @@ input {
     right: 15px;
     top: 5px;
     cursor: pointer;
+    transition: transform .2s ease-in;
+}
+
+.modal-close:hover {
+    transform: scale(1.2);
 }
 
 .hidden {
@@ -84,6 +89,32 @@ input {
 
 .card:hover {
     box-shadow: 5px 10px 20px 3px rgba(211, 211, 211, .7);
+}
+
+.left-arrow {
+    position: absolute;
+    left: 15px;
+    top: 30%;
+    font-size: 2rem;
+    color: #c5c5c5;
+    cursor: pointer;
+    transition: transform .2s ease-in;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 15px;
+    top: 30%;
+    font-size: 2rem;
+    color: #c5c5c5;
+    cursor: pointer;
+    transition: transform .2s ease-in;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+    color: #000000;
+    transform: scale(1.2);
 }
 
 .avatar {

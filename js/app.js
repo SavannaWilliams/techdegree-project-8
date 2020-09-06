@@ -61,6 +61,8 @@ function displayModal(index) {
                 <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
                 <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
         </div>
+        <div class="left-arrow">&#9664;</div>
+        <div class="right-arrow">&#9654;</div>
         `;
 
     // Make the overlay visible
