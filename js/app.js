@@ -48,6 +48,10 @@ function displayModal(index) {
         location: { city, street, state, postcode},
         picture} = employees[index];
     let date = new Date(dob.date);
+    let previous = index - 1;
+    let next = Number(index) + 1;
+    let totalEmployees = employees.length - 1;
+
 
     // Build the modal's HTML
     const modalHTML = `
@@ -69,6 +73,27 @@ function displayModal(index) {
     overlay.classList.remove("hidden");
     // Insert modal HTML content into div
     modalContainer.innerHTML = modalHTML;
+
+    // Add modal previous and next arrow event listeners
+    let prevArrow = document.querySelector('.left-arrow');
+    let nextArrow = document.querySelector('.right-arrow');
+
+    prevArrow.addEventListener('click', e => {
+        if (index !== 0){
+            displayModal(previous);
+        } else {
+            displayModal(totalEmployees);
+        }
+    });
+
+    nextArrow.addEventListener('click', e => {
+        if (index !== totalEmployees){
+            displayModal(next);
+        } else {
+            displayModal(0);
+        }
+
+    });
 }
 
 gridContainer.addEventListener('click', e => {
