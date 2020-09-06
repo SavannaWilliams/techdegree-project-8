@@ -79,6 +79,11 @@ input {
     align-items: center;
     padding: 20px 10px;
     margin: 0 auto 25px auto;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 5px 10px 20px 3px rgba(211, 211, 211, .7);
 }
 
 .avatar {
