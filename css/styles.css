@@ -16,10 +16,11 @@ body {
 
 header {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    flex-flow: column nowrap;
+    justify-content: center;
     align-items: center;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 input {
@@ -50,8 +51,9 @@ input {
 
 .modal {
     width: 375px;
-    margin: 15% auto auto;
-    position: relative;
+    height: 450px;
+    margin: 15% 36.5%;
+    position: fixed;
     text-align: center;
     background: #fff;
     border: 1px solid #778;
@@ -78,8 +80,9 @@ input {
 .card {
     border: 1px solid #c5c5c5;
     width: 90%;
+    min-height: 175px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     align-items: center;
     padding: 20px 10px;
@@ -119,6 +122,7 @@ input {
 
 .avatar {
     border-radius: 50%;
+    padding-right: 10px;
 }
 
 /* ================================= 
@@ -127,14 +131,31 @@ input {
 
 /* == Tablet media query == */
 @media only screen and (min-width: 768px) {
+    header {
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        text-align: left;
+    }
+
     .card {
         width: 45%;
+        min-height: 300px;
     }
 }
 
-/* == Desktop media query == */
+/* == Laptop small media query == */
 @media only screen and (min-width: 1024px) {
     .card {
         width: 30%;
+        flex-flow: column nowrap;
+    }
+}
+
+/* == Laptop large media query == */
+@media only screen and (min-width: 1440px) {
+    .card {
+        width: 30%;
+        flex-flow: row nowrap;
+        min-height: 10px;
     }
 }

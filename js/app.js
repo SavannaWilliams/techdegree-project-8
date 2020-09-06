@@ -48,8 +48,10 @@ function displayModal(index) {
         location: { city, street, state, postcode},
         picture} = employees[index];
     let date = new Date(dob.date);
+    // Find the data-index of the previous and next employee.
     let previous = index - 1;
     let next = Number(index) + 1;
+    // Store the total number of employees in the list for the arrow navigation.
     let totalEmployees = employees.length - 1;
 
 
@@ -78,6 +80,7 @@ function displayModal(index) {
     let prevArrow = document.querySelector('.left-arrow');
     let nextArrow = document.querySelector('.right-arrow');
 
+    // Check that current selection isn't the first on list, and if it is, open the last employee on the list.
     prevArrow.addEventListener('click', e => {
         if (index !== 0){
             displayModal(previous);
@@ -86,6 +89,7 @@ function displayModal(index) {
         }
     });
 
+    // Check that current selection isn't the last on list, and if it is, open the first employee on the list.
     nextArrow.addEventListener('click', e => {
         if (index !== totalEmployees){
             displayModal(next);
