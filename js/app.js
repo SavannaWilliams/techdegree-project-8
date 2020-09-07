@@ -114,14 +114,13 @@ modalClose.addEventListener('click', e => {
     overlay.classList.add('hidden');
 });
 
+// Called by onkeyup on search input
 function filterSearch() {
   let input = document.getElementById('search');
   let filter = input.value.toUpperCase();
 
   // Loop through all list items, and hide those who don't match the search query
   for (let i = 0; i < employees.length; i++) {
-    let firstName = employees[i].name.first.toUpperCase();
-    let lastName = employees[i].name.last.toUpperCase();
     let dataIndex = `[data-index="${i}"]`;
     let currentCard = document.querySelector(dataIndex);
     let currentName = currentCard.querySelector('h2').textContent.toUpperCase();
